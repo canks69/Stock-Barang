@@ -1,0 +1,4 @@
+/* This file is reserved for overriding and extending the template styles. */
+.form-control.is-invalid {
+    border-color: #dc3545; /* Warna border ketika tidak valid */
+  }
