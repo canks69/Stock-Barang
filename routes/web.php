@@ -24,16 +24,16 @@ use App\Http\Controllers\Setting\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () 
+Route::group(['middleware' => 'auth', 'prefix' => '/'], function () 
 {
-    Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboards');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboards');
 
     Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
     Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');

@@ -75,12 +75,14 @@
                     <span class="label">Dashboards</span>
                 </a>
             </li>
+            @if(Auth::user()->role != 'pengguna')
             <li>
                 <a href="{{ route('customer.index') }}" data-href="/customer">
                     <i data-acorn-icon="building-large" class="icon" data-acorn-size="18"></i>
                     <span class="label">Pelanggan</span>
                 </a>
             </li>
+            @endif
             <li>
                 <a href="#Transaksi" data-href="/Transaksi">
                     <i data-acorn-icon="web-page" class="icon" data-acorn-size="18"></i>
@@ -92,13 +94,16 @@
                             <span class="label">Penjualan</span>
                         </a>
                     </li>
+                    @if(Auth::user()->role != 'pengguna')
                     <li>
                         <a href="{{ route('purchase.index') }}" data-href="/purchase">
                             <span class="label">Pembelian</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </li>
+            @if(Auth::user()->role != 'pengguna')
             <li>
                 <a href="#ManajemenStock" data-href="/ManajemenStock">
                     <i data-acorn-icon="laptop" class="icon" data-acorn-size="18"></i>
@@ -117,6 +122,8 @@
                     </li>
                 </ul>
             </li>
+            @endif
+            @if(Auth::user()->role != 'pengguna')
             <li>
                 <a href="#Laporan" data-href="/Laporan">
                     <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
@@ -140,6 +147,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
             @if(Auth::user()->role == 'admin')
             <li>
                 <a href="#Pengaturan" data-href="/Pengaturan">
